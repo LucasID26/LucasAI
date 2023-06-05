@@ -18,4 +18,4 @@ if not HEROKU:
 
 
 # Leave it as it is
-ARQ_API_BASE_URL = "https://arq.hamker.in"
+ARQ_API_BASE_URL = "https://arq.hamker.dev"
