@@ -11,7 +11,9 @@ if HEROKU:
 if not HEROKU:
     from os import environ
 
-    bot_token = environ["bot_token"]
+    STRING = environ["STRING"]
+    API_ID = environ["API_ID"]
+    API_HASH = environ["API_HASH"]
     ARQ_API_KEY = environ["ARQ_API_KEY"]
     LANGUAGE = environ["LANGUAGE"]
 
