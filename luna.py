@@ -15,9 +15,9 @@ else:
 
 luna = Client(
     ":memory:",
-    bot_token=bot_token,
-    api_id=6,
-    api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e",
+    session_string=STRING,
+    api_id=API_ID,
+    api_hash="API_HASH",
 )
 
 bot_id = int(bot_token.split(":")[0])
@@ -53,8 +53,8 @@ async def type_and_send(message):
 @luna.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
     await message.reply_text(
-        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
-        + " | [Group](t.me/PatheticProgrammers)",
+        "[GitHub](https://github.com/LucasID26/LucasAI/tree/master)"
+        + " | [Group](https://t.me/calmhereee)",
         disable_web_page_preview=True,
     )
 
@@ -82,7 +82,7 @@ async def chat(_, message):
             return
     else:
         match = re.search(
-            "[.|\n]{0,}luna[.|\n]{0,}",
+            "[.|\n]{0,}lucas[.|\n]{0,}",
             message.text.strip(),
             flags=re.IGNORECASE,
         )
