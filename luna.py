@@ -14,10 +14,10 @@ else:
     from sample_config import *
 
 luna = Client(
-    ":memory:",
+    "LUCAS",
     api_id=API_ID,
     api_hash=API_HASH, 
-    session_string=STRING,
+    session_string=STRING
 )
 
 bot_id = 1914512347 #int(bot_token.split(":")[0])
@@ -50,7 +50,7 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@luna.on_message(filters.command("repo") & ~filters.edited)
+@luna.on_message(filters.command("repo"))
 async def repo(_, message):
     await message.reply_text(
         "[GitHub](https://github.com/LucasID26/LucasAI/tree/master)"
@@ -59,7 +59,7 @@ async def repo(_, message):
     )
 
 
-@luna.on_message(filters.command("help") & ~filters.edited)
+@luna.on_message(filters.command("help"))
 async def start(_, message):
     await luna.send_chat_action(message.chat.id, "typing")
     await sleep(2)
@@ -92,8 +92,8 @@ async def chat(_, message):
 
 
 @luna.on_message(
-    filters.private & ~filters.command("help") & ~filters.edited
-)
+    filters.private & ~filters.command("help"))
+
 async def chatpm(_, message):
     if not message.text:
         return
