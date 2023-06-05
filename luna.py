@@ -20,7 +20,7 @@ luna = Client(
     api_hash="API_HASH",
 )
 
-bot_id = int(bot_token.split(":")[0])
+bot_id = 1914512347 #int(bot_token.split(":")[0])
 arq = None
 
 
